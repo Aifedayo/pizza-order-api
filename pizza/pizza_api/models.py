@@ -39,7 +39,7 @@ class CustomerAddress(models.Model):
 class Pizza(models.Model):
     db_table = 'pizza'
 
-    pizza_name = models.CharField(max_length=255, unique=True)
+    name = models.CharField(max_length=255, unique=True)
 
     def __str__(self):
         return self.pizza_name
