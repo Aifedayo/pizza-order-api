@@ -19,7 +19,7 @@ class Customer(models.Model):
 
     first_name = models.CharField(max_length=50, null=False)
     last_name = models.CharField(max_length=50, null=False)
-    phone_number = models.IntegerField(blank=False, null=False)
+    phone_number = models.PositiveBigIntegerField(blank=True, null=True)
     email_address = models.EmailField(max_length=255, blank=True, null=True)
 
     def __str__(self):
