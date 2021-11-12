@@ -4,10 +4,10 @@ from .views import OrderViewSet, CustomerViewSet, PizzaViewSet, CustomerAddressV
 from django.urls import path, include
 
 router = routers.SimpleRouter()
-router.register('customers/(?P<customer_id>\d+)/orders', OrderViewSet, base_name='customer_orders')
-router.register('customers/(?P<customer_id>\d+)/addresses', CustomerAddressViewSet, base_name='customer_addresses')
-router.register('customers', CustomerViewSet, base_name='customers')
-router.register('pizzas', PizzaViewSet, base_name='pizzas')
+router.register('customers/(?P<customer_id>\d+)/orders', OrderViewSet, basename='customer_orders')
+router.register('customers/(?P<customer_id>\d+)/addresses', CustomerAddressViewSet, basename='customer_addresses')
+router.register('customers', CustomerViewSet, basename='customers')
+router.register('pizzas', PizzaViewSet, basename='pizzas')
 
 urlpatterns = [
     path('', include(router.urls)),

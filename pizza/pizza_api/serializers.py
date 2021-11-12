@@ -3,7 +3,7 @@ from rest_framework.exceptions import ValidationError
 from .models import Order, Pizza, Customer, CustomerAddress
 
 
-class CustomerSerializer(serializers.ModelSerilizer):
+class CustomerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Customer
         fields = ('id', 'first_name', 'last_name')

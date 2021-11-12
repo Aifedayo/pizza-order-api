@@ -16,7 +16,7 @@ class CustomerAddressViewSet(viewsets.ModelViewSet):
         return CustomerAddress.objects.filter(customer_id=customer_id)
 
 
-class PizzaViewSet(viewsets.ModelVieeSet):
+class PizzaViewSet(viewsets.ModelViewSet):
     queryset = Pizza.objects.filter()
     serializer_class = PizzaSerializer
 
