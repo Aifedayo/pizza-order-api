@@ -6,7 +6,7 @@ from .models import Order, Pizza, Customer, CustomerAddress
 class CustomerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Customer
-        fields = ('id', 'first_name', 'last_name')
+        fields = ('id', 'first_name', 'last_name', 'phone_number', 'email_address')
         read_only_fields = ('id',)
 
     def create(self, validated_data):
@@ -15,6 +15,8 @@ class CustomerSerializer(serializers.ModelSerializer):
     def update(self, instance, validated_data):
         instance.first_name = validated_data.get('first_name', instance.first_name)
         instance.last_name = validated_data.get('last_name', instance.last_name)
+        instance.phone_number = validated_data.get('phone_number', instance.phone_number)
+        instance.email = validated_data.get('email_address', instance.email_address)
         instance.save()
         return instance
 
