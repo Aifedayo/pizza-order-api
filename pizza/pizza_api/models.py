@@ -23,7 +23,10 @@ class Customer(models.Model):
     email_address = models.EmailField(max_length=255, blank=True, null=True)
 
     def __str__(self):
-        return f"Customer's full name: {self.first_name} + " " + {self.last_name}"
+        return f"{self.first_name} {self.last_name}"
+
+    def full_name(self):
+        return self.first_name + " " + self.last_name
 
 
 class CustomerAddress(models.Model):
@@ -42,7 +45,7 @@ class Pizza(models.Model):
     name = models.CharField(max_length=255, unique=True)
 
     def __str__(self):
-        return self.pizza_name
+        return self.name
 
 
 class Order(models.Model):
@@ -51,9 +54,8 @@ class Order(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE, null=False)
     customer_address = models.ForeignKey(CustomerAddress, on_delete=models.CASCADE)
     pizza = models.ForeignKey(Pizza, on_delete=models.CASCADE)
-
     size = models.CharField(max_length=20, null=False, choices=PIZZA_SIZES)
-    order_status = models.CharField(max_length=15, choices=STATUS_ORDER_CHOICES)
+    order_status = models.CharField(max_length=15, null=False, choices=STATUS_ORDER_CHOICES)
 
     class Meta:
         indexes = (

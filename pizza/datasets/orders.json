@@ -1,19 +1,19 @@
 [
     {
-      "model": "orders.Order",
+      "model": "pizza_api.Order",
       "pk": 1,
       "fields": {
-        "customer_id": 1,
+        "customer_id": 3,
         "customer_address_id": 1,
         "pizza_id": 2,
         "size": "REGULAR"
       }
     },
     {
-      "model": "orders.Order",
+      "model": "pizza_api.Order",
       "pk": 2,
       "fields": {
-        "customer_id": 1,
+        "customer_id": 2,
         "customer_address_id": 2,
         "pizza_id": 3,
         "size": "LARGE"

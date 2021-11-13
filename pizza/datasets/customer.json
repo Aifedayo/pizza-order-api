@@ -1,17 +1,17 @@
 [
     {
-      "model": "orders.CustomerAddress",
+      "model": "pizza_api.CustomerAddress",
       "pk": 1,
       "fields": {
-        "customer_id": 1,
+        "customer_id": 3,
         "address": "Dublin, Ireland"
       }
     },
     {
-      "model": "orders.CustomerAddress",
+      "model": "pizza_api.CustomerAddress",
       "pk": 2,
       "fields": {
-        "customer_id": 1,
+        "customer_id": 2,
         "address": "Pune, India"
       }
     }

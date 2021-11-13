@@ -4,7 +4,7 @@ from .serializers import OrderSerializer, CustomerAddressSerializer, PizzaSerial
 
 
 class CustomerViewSet(viewsets.ModelViewSet):
-    queryset = Customer.objects.all()
+    queryset = Customer.objects.all().order_by('pk')
     serializer_class = CustomerSerializer
 
 

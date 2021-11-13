@@ -1,12 +1,12 @@
 [
-    {"model": "orders.pizza", "pk": 1, "fields": {"name": "Margherita"}},
-    {"model": "orders.pizza", "pk": 2, "fields": {"name": "Farmhouse"}},
-    {"model": "orders.pizza", "pk": 3, "fields": {"name": "Indi Chicken Tikka"}},
-    {"model": "orders.pizza", "pk": 4, "fields": {"name": "Capricciosa"}},
-    {"model": "orders.pizza", "pk": 5, "fields": {"name": "Funghi"}},
-    {"model": "orders.pizza", "pk": 6, "fields": {"name": "Bolognese"}},
-    {"model": "orders.pizza", "pk": 7, "fields": {"name": "Hawaiian pizza"}},
-    {"model": "orders.pizza", "pk": 8, "fields": {"name": "Napolitana"}},
-    {"model": "orders.pizza", "pk": 9, "fields": {"name": "Vegetariana"}},
-    {"model": "orders.pizza", "pk": 10, "fields": {"name": "Chicken Dominator"}}
+    {"model": "pizza_api.pizza", "pk": 1, "fields": {"name": "Margherita"}},
+    {"model": "pizza_api.pizza", "pk": 2, "fields": {"name": "Farmhouse"}},
+    {"model": "pizza_api.pizza", "pk": 3, "fields": {"name": "Indi Chicken Tikka"}},
+    {"model": "pizza_api.pizza", "pk": 4, "fields": {"name": "Capricciosa"}},
+    {"model": "pizza_api.pizza", "pk": 5, "fields": {"name": "Funghi"}},
+    {"model": "pizza_api.pizza", "pk": 6, "fields": {"name": "Bolognese"}},
+    {"model": "pizza_api.pizza", "pk": 7, "fields": {"name": "Hawaiian pizza"}},
+    {"model": "pizza_api.pizza", "pk": 8, "fields": {"name": "Napolitana"}},
+    {"model": "pizza_api.pizza", "pk": 9, "fields": {"name": "Vegetariana"}},
+    {"model": "pizza_api.pizza", "pk": 10, "fields": {"name": "Chicken Dominator"}}
     ]

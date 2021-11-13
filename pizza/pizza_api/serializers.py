@@ -47,7 +47,7 @@ class PizzaSerializer(serializers.ModelSerializer):
         return Pizza.objects.create(**validated_data)
 
     def update(self, instance, validated_data):
-        instance.pizza_name = validated_data.get('pizza_name', instance.pizza_name)
+        instance.name = validated_data.get('name', instance.pizza_name)
         instance.save()
         return instance
 
@@ -56,7 +56,7 @@ class OrderSerializer(serializers.ModelSerializer):
     class Meta:
         model = Order
         fields = ('id','customer', 'customer_address', 'pizza', 'size', 'order_status')
-        read_only_fields = ('id', 'order_status',)
+        read_only_fields = ('id',)
 
     def validate(self, data):
         customer_address = data['customer_address']
@@ -72,6 +72,7 @@ class OrderSerializer(serializers.ModelSerializer):
         del response['customer_address']
         del response['size']
 
+        response['customer'] = instance.customer.full_name()
         response['address'] = CustomerAddressSerializer(instance.customer_address).data
 
         response['pizza'] = PizzaSerializer(instance.pizza).data
@@ -86,5 +87,6 @@ class OrderSerializer(serializers.ModelSerializer):
         instance.customer_address = validated_data.get('customer_address', instance.customer_address)
         instance.pizza = validated_data.get('pizza', instance.pizza)
         instance.size = validated_data.get('size', instance.size)
+        instance.order_status = validated_data.get('order_status', instance.order_status)
         instance.save()
         return instance

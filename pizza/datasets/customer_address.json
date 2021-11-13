@@ -1,23 +1,23 @@
 [
     {
-      "model": "orders.Customer",
-      "pk": 1,
+      "model": "pizza_api.Customer",
+      "pk": 6,
       "fields": {
         "first_name": "Ashish",
         "last_name": "Kumar"
       }
     },
     {
-      "model": "orders.Customer",
-      "pk": 2,
+      "model": "pizza_api.Customer",
+      "pk": 7,
       "fields": {
         "first_name": "Amit",
         "last_name": "Singh"
       }
     },
     {
-      "model": "orders.Customer",
-      "pk": 3,
+      "model": "pizza_api.Customer",
+      "pk": 8,
       "fields": {
         "first_name": "Mohan",
         "last_name": "Patil"
