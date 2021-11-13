@@ -1,3 +1,4 @@
+from django.db.models.query import InstanceCheckMeta
 from rest_framework import serializers
 from rest_framework.exceptions import ValidationError
 from .models import Order, Pizza, Customer, CustomerAddress
@@ -24,8 +25,20 @@ class CustomerSerializer(serializers.ModelSerializer):
 class CustomerAddressSerializer(serializers.ModelSerializer):
     class Meta:
         model = CustomerAddress
-        fields = ('id', 'customer', 'address')
+        fields = '__all__'
         read_only_fields = ('id', 'ctime', 'mtime')
+
+    #Field-level Validation
+    def validate_address(self, value):
+        if value != value.capitalize():
+            raise serializers.ValidationError("Address not in capitalize format")
+        return value
+
+    def to_representation(self, instance):
+        response = super().to_representation(instance)
+
+        response['customer'] = instance.customer.full_name()
+        return response
 
     def create(self, validated_data):
         customer_id = self.context['view'].kwargs['customer_id']
@@ -58,6 +71,7 @@ class OrderSerializer(serializers.ModelSerializer):
         fields = ('id','customer', 'customer_address', 'pizza', 'size', 'order_status')
         read_only_fields = ('id',)
 
+    # Object-level Validation
     def validate(self, data):
         customer_address = data['customer_address']
         customer_id = int(self.context['view'].kwargs['customer_id'])
